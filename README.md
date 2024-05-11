@@ -4,6 +4,7 @@ Liquid progress indicator for Flutter.
 
 This version fix the original package Liquid progress indicator issues after upgrading to flutter 3.10 which was making it incompatible.
 
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_circular_progress_indicator.gif" width=250>
 <img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_linear_progress_indicator.gif" width=250>
@@ -56,3 +57,4 @@ This version fix the original package Liquid progress indicator issues after upg
       direction: Axis.vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right).
       shapePath: _buildBoatPath(), // A Path object used to draw the shape of the progress indicator. The size of the progress indicator is created from the bounds of this path.
     )
+This version has been fixed to work on  [FENLES](https://fenles.com) APP. However can be freely used as it contains only the fix for newer flutter versions
