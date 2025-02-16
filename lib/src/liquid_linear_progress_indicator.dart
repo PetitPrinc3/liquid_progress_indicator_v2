@@ -17,30 +17,37 @@ class LiquidLinearProgressIndicator extends ProgressIndicator {
   ///The direction the liquid travels.
   final Axis direction;
 
+  ///The wave height
+  final double waveHeight;
+
+  ///The wave length
+  final double waveLength;
+
+  ///The wave speed
+  final double speed;
+
   LiquidLinearProgressIndicator({
-    Key? key,
-    double value = 0.5,
-    Color? backgroundColor,
-    Animation<Color>? valueColor,
+    super.key,
+    double super.value = 0.5,
+    super.backgroundColor,
+    Animation<Color>? super.valueColor,
     this.borderWidth,
     this.borderColor,
     this.borderRadius,
     this.center,
     this.direction = Axis.horizontal,
-  }) : super(
-          key: key,
-          value: value,
-          backgroundColor: backgroundColor,
-          valueColor: valueColor,
-        ) {
+    this.waveHeight = 10,
+    this.waveLength = 1,
+    this.speed = 1,
+  }) {
     if (borderWidth != null && borderColor == null ||
         borderColor != null && borderWidth == null) {
-      throw ArgumentError("borderWidth and borderColor should both be set.");
+      throw ArgumentError('borderWidth and borderColor should both be set.');
     }
   }
 
   Color _getBackgroundColor(BuildContext context) =>
-      backgroundColor ?? Theme.of(context).colorScheme.background;
+      backgroundColor ?? Theme.of(context).colorScheme.surface;
 
   Color _getValueColor(BuildContext context) =>
       valueColor?.value ?? Theme.of(context).colorScheme.secondary;
@@ -73,6 +80,9 @@ class _LiquidLinearProgressIndicatorState
               value: widget.value,
               color: widget._getValueColor(context),
               direction: widget.direction,
+              waveHeight: widget.waveHeight,
+              waveLength: widget.waveLength,
+              speed: widget.speed,
             ),
             if (widget.center != null) Center(child: widget.center),
           ],
