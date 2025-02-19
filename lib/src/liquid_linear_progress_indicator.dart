@@ -70,7 +70,7 @@ class _LiquidLinearProgressIndicatorState
           radius: widget.borderRadius ?? 0,
         ),
         foregroundPainter: _LinearBorderPainter(
-          color: widget.borderColor ?? Colors.black,
+          color: widget.borderColor ?? Colors.transparent,
           width: widget.borderWidth ?? 0,
           radius: widget.borderRadius ?? 0,
         ),
